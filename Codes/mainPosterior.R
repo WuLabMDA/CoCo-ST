@@ -2,8 +2,6 @@
 rm(list = ls(all = TRUE))
 graphics.off()
 
-setwd("C:/Projects/Contrastive PCA/ST/Mouse Data (Bo)/Codes")
-
 library(Seurat)
 library(SeuratData)
 library(ggpubr)
@@ -37,7 +35,7 @@ posterior <- LoadData("stxBrain", type = "posterior1")
 posterior <- SCTransform(posterior, assay = "Spatial", verbose = FALSE)
 SpatialFeaturePlot(posterior, features = "nCount_Spatial") + theme(legend.position = "right")
 
-# graph contrastive PCA
+# CoCoST
 fdata <- posterior@assays[["SCT"]]@scale.data
 # flocation <- abnormalTissue@images[["slice1"]]@coordinates[,c(2,3)] 
 flocation <- GetTissueCoordinates(posterior)
@@ -58,19 +56,18 @@ Wb <- bKernel@.Data
 # Extract contrastive features
 para <- 0.10
 Dim <- 50
-gCPCA <- CoCoST(t(fdata),Wf,t(bdata),Wb,para,Dim)
+CoCo <- CoCoST(t(fdata),Wf,t(bdata),Wb,para,Dim)
 
-fgraphCPCA <- CreateDimReducObject(
-  embeddings = gCPCA[["fgComponents"]],
-  loadings = gCPCA[["projMatrix"]],
+fCoCo <- CreateDimReducObject(
+  embeddings = CoCo[["fgComponents"]],
+  loadings = CoCo[["projMatrix"]],
   stdev = numeric(),
   key = "CoCoST_",
   assay = "SCT"
 )
 
-rownames(fgraphCPCA@feature.loadings) <- rownames(fdata)
-posterior@reductions[["CoCo_ST"]] <- fgraphCPCA
-
+rownames(fCoCo@feature.loadings) <- rownames(fdata)
+posterior@reductions[["CoCo_ST"]] <- fCoCo
 posterior <- RunUMAP(posterior, reduction = "CoCo_ST", dims = 1:50, 
                     n.components = 5, reduction.name = "CoCo_UMAP")
 posterior <- FindNeighbors(posterior, reduction = "CoCo_ST", dims = 1:10)
@@ -84,7 +81,7 @@ SpatialDimPlot(posterior, label = FALSE, label.size = 3, group.by = "CoCo_cluste
 SpatialFeaturePlot(posterior, features = c("CoCoST_1", "CoCoST_2", "CoCoST_3", "CoCoST_4", "CoCoST_5"), ncol = 5, 
                    pt.size.factor = 2.1)
 
-# Plot gene loading for foreground gCPCA components
+# Plot gene loading for foreground CoCoST components
 refComponents <- c(1:5)
 loadings <- as.data.frame(posterior@reductions[["CoCo_ST"]]@feature.loadings[,refComponents])
 nfea <- nrow(loadings)
