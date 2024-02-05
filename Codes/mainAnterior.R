@@ -1,0 +1,103 @@
+# delete work space
+rm(list = ls(all = TRUE))
+graphics.off()
+
+setwd("C:/Projects/Contrastive PCA/ST/Mouse Data (Bo)/Codes")
+
+library(Seurat)
+library(SeuratData)
+# library(ggpubr)
+# library(ggplot2)
+# library(patchwork)
+# library(dplyr)
+# library(MOFA2)
+# library(tidyverse)
+# library(cowplot)
+# library(magrittr)
+# library(SpatialPCA)
+# library(spacexr)
+# library(kernlab)
+# library(MAST)
+# # library(fdrtool)
+# library(qvalue)
+library(gprofiler2)
+# library(forcats)
+# library(monocle3)
+library(SeuratWrappers)
+# library(ggridges)
+
+source("helperFunctions.R")
+source("graphCPCA.R")
+
+anterior <- LoadData("stxBrain", type = "anterior1")
+anterior <- SCTransform(anterior, assay = "Spatial", verbose = FALSE)
+SpatialFeaturePlot(anterior, features = "nCount_Spatial") + theme(legend.position = "right")
+
+posterior <- LoadData("stxBrain", type = "posterior1")
+posterior <- SCTransform(posterior, assay = "Spatial", verbose = FALSE)
+SpatialFeaturePlot(posterior, features = "nCount_Spatial") + theme(legend.position = "right")
+
+# graph contrastive PCA
+fdata <- anterior@assays[["SCT"]]@scale.data
+# flocation <- abnormalTissue@images[["slice1"]]@coordinates[,c(2,3)] 
+flocation <- GetTissueCoordinates(anterior)
+
+bdata <- posterior@assays[["SCT"]]@scale.data
+# blocation <- normalTissue@images[["slice1"]]@coordinates[,c(2,3)]
+blocation <- GetTissueCoordinates(posterior)
+
+# construct affinity matrices
+rbf <- laplacedot(sigma = 0.50)
+
+fKernel <- kernelMatrix(rbf, t(fdata))
+Wf <- fKernel@.Data
+
+bKernel <- kernelMatrix(rbf, t(bdata))
+Wb <- bKernel@.Data
+
+# Extract contrastive features
+para <- 0.10
+Dim <- 50
+gCPCA <- graphCPCA(t(fdata),Wf,t(bdata),Wb,para,Dim)
+
+fgraphCPCA <- CreateDimReducObject(
+  embeddings = gCPCA[["fgComponents"]],
+  loadings = gCPCA[["projMatrix"]],
+  stdev = numeric(),
+  key = "CoCo_ST_",
+  assay = "SCT"
+)
+
+rownames(fgraphCPCA@feature.loadings) <- rownames(fdata)
+anterior@reductions[["CoCo_ST"]] <- fgraphCPCA
+
+anterior <- RunUMAP(anterior, reduction = "CoCo_ST", dims = 1:50, 
+                    n.components = 5, reduction.name = "CoCo_UMAP")
+anterior <- FindNeighbors(anterior, reduction = "CoCo_ST", dims = 1:10)
+anterior <- FindClusters(anterior, verbose = TRUE, resolution = 0.8)
+anterior@meta.data[["CoCo_clusters"]]  <- anterior@meta.data[["SCT_snn_res.0.8"]]
+
+# cols <- c("#E1BD6D","deepskyblue1","#7A3A9A","#ED0000FF","#0B775E","#ff00ff","#7B556C","#44B05B")
+DimPlot(anterior, reduction = "CoCo_UMAP", label = FALSE)
+SpatialDimPlot(anterior, label = FALSE, label.size = 3, group.by = "CoCo_clusters", pt.size.factor = 2.2) 
+
+SpatialFeaturePlot(anterior, features = c("CoCoST_1", "CoCoST_2", "CoCoST_3", "CoCoST_4", "CoCoST_5"), ncol = 5, 
+                   pt.size.factor = 2.2)
+
+# Plot gene loading for foreground gCPCA components
+refComponents <- c(1:5)
+loadings <- as.data.frame(anterior@reductions[["CoCo_ST"]]@feature.loadings[,refComponents])
+nfea <- nrow(loadings)
+whichComp <- c(1:5)
+numGenes <- 20
+
+topGenes <- getTopGenes(loadings,refComponents,numGenes)
+
+geneList <- topGenes[["topGenes"]]
+pltTopG <- plotLoadings(geneList)
+pltTopG[[1]]
+
+compTopG <- topGenes[["compTopFirstGene"]]
+SpatialFeaturePlot(anterior, features = compTopG, ncol = 5, pt.size.factor = 2.2)
+
+
