@@ -1,6 +1,49 @@
-# PanDA
-PanDA is a joint discriminant analysis method aimed at fusing multi-omics datasets through finding a discriminant common latent space. PanDA captures cross-omics interaction and consistency and uses an uncorrelated constraint to ensure that the extracted latent components for each omics (omics-specific components) are not highly correlated. Because the components extracted using PanDA contain valuable discriminant information, we refer to them as discriminant components. These components can be used as inputs to several multi-omics analysis tools to enable efficient, improved downstream analysis. Here and in our paper, we demonstrated the advantages of PanDA over ten integrative multi-omics methods through four distinct downstream analyses: single-cell multi-omics data visualization, patient (or tumor) classification, biomarker identification, and clinical outcome prediction.
+<div align="center">
+
+# 🧬 CoCoST: Compare-and-Contrast Spatial Transcriptomics
+
+**A scalable contrastive learning framework for identifying multi-scale spatial domains in spatial transcriptomics data**
+
+[![GitHub Stars](https://img.shields.io/github/stars/WuLabMDA/CoCo-ST?style=social)](https://github.com/WuLabMDA/CoCo-ST/stargazers)
+[![GitHub Issues](https://img.shields.io/github/issues/WuLabMDA/CoCo-ST)](https://github.com/WuLabMDA/CoCo-ST/issues)
+[![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/WuLabMDA/CoCo-ST/blob/master/LICENSE)
+
+</div>
+
+---
+
+## 🔍 Overview
+
+**CoCoST (Compare-and-Contrast Spatial Transcriptomics)** is a computational algorithm that leverages **contrastive learning** to identify both **high-variance** and **low-variance** spatial structures across spatial transcriptomics datasets.  
+Unlike conventional methods that primarily detect dominant spatial domains, CoCoST uncovers subtle yet biologically meaningful spatial niches that are critical for understanding **early tumor evolution**, **precancerous changes**, and **cell–cell interactions**.
+
+---
 
 <p align="center">
   <img src="figures/workflow.png" width="900">
 </p>
+
+## 🌟 Key Features
+
+- 🧩 **Contrastive spatial learning** – disentangles unique and shared structures across datasets (e.g., tumor vs. normal).  
+- ⚙️ **Multi-scale domain detection** – supports analysis at subcellular (2 µm), cellular (8 µm), and tissue (16 µm) scales.  
+- 🔗 **Cross-sample integration** – harmonizes data from multiple samples and platforms (Visium, Visium HD, Xenium).  
+- ⚡ **Scalable** – efficiently handles tens of millions of spatial spots.  
+- 🧬 **Biologically interpretable** – links spatial domains to immune–stromal interactions and cancer evolution trajectories.  
+
+---
+
+## 💻 Installation
+
+You can install the latest development version of **CoCoST** directly from GitHub:
+
+```r
+# Option 1: using devtools
+# install.packages("devtools")
+devtools::install_github("WuLabMDA/CoCo-ST")
+
+# Option 2: using remotes
+# install.packages("remotes")
+remotes::install_github("WuLabMDA/CoCo-ST")
+
+
