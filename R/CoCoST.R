@@ -1,5 +1,3 @@
-# Save this code in a file named "CoCoST_function.R"
-
 #' CoCoST: Compare-and-Contrast Spatial Transcriptomics
 #'
 #' CoCoST identifies contrastive spatial structures by comparing two datasets
@@ -49,7 +47,7 @@ CoCoST <- function(data1, W1, data2, W2, para = 0.2, Dim = 2) {
     stop("W1 and W2 must be 2D matrices (not numeric vectors).")
   }
 
-  # ✅ Corrected coercion — use base `as()`, not Matrix::as()
+  # Corrected coercion 
   W1 <- as(W1, "sparseMatrix")
   W2 <- as(W2, "sparseMatrix")
 
