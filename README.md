@@ -47,3 +47,19 @@ devtools::install_github("WuLabMDA/CoCo-ST")
 remotes::install_github("WuLabMDA/CoCo-ST")
 
 
+---
+
+## Tutorials
+
+We provide detailed tutorials demonstrating how to run **CoCoST** on various spatial transcriptomics datasets and integrate it with downstream spatial analysis frameworks.
+
+| Tutorial | Description | Link |
+|-----------|--------------|------|
+| **Basic Tutorial** | Run CoCoST on toy datasets to extract contrastive spatial domains | [View →](https://github.com/WuLabMDA/CoCo-ST/tree/main/tutorials/basic_tutorial.Rmd) |
+| **Visium HD Analysis** | Apply CoCoST on high-resolution (2 µm–16 µm) Visium HD data for multi-scale domain detection | [View →](https://github.com/WuLabMDA/CoCo-ST/tree/main/tutorials/visium_hd_tutorial.Rmd) |
+| **Cross-Sample Integration** | Integrate multiple spatial samples and visualize contrastive domains | [View →](https://github.com/WuLabMDA/CoCo-ST/tree/main/tutorials/multi_sample_integration.Rmd) |
+| **Cell–Cell Interaction Tutorial** | Combine CoCoST spatial domains with cell–cell interaction analysis (e.g., CellChat, NicheNet) | [View →](https://github.com/WuLabMDA/CoCo-ST/tree/main/tutorials/cell_interaction_tutorial.Rmd) |
+
+---
+
+
