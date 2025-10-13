@@ -26,10 +26,10 @@ Unlike conventional methods that primarily detect dominant spatial domains, CoCo
 ## Key Features
 
 -  **Contrastive spatial learning** – disentangles unique and shared structures across datasets (e.g., tumor vs. normal).  
--  **Multi-scale domain detection** – supports analysis at subcellular (2 µm), cellular (8 µm), and tissue (16 µm) scales.  
+-  **Multi-scale domain detection** – supports analysis at subcellular, cellular, and tissue (spots) scales.  
 -  **Cross-sample integration** – harmonizes data from multiple samples and platforms (Visium, Visium HD, Xenium).  
--  **Scalable** – efficiently handles tens of millions of spatial spots.  
--  **Biologically interpretable** – links spatial domains to immune–stromal interactions and cancer evolution trajectories.  
+-  **Scalable** – efficiently handles millions of spatial spots.  
+-  **Biologically interpretable** – links contrastive components and spatial domains to known biological structures.  
 
 ---
 
