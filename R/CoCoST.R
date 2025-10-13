@@ -22,6 +22,13 @@
 #'
 #' @export
 CoCoST <- function(data1, W1, data2, W2, para = 0.2, Dim = 2) {
+
+  # --- Load required libraries ---
+  suppressMessages({
+    library(Matrix)
+    library(RSpectra)
+  })
+  
   if (missing(data1)) stop("Foreground data not provided, please provide data")
   if (missing(data2)) stop("Needs to provide the background data")
   if (missing(W1)) stop("Affinity matrix for foreground data not provided!")
