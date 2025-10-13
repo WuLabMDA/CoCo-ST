@@ -1,37 +1,35 @@
-<h1 align="center">🧬 CoCoST: Compare-and-Contrast Spatial Transcriptomics</h1>
+<div align="center">
 
-<p align="center">
-  <b>A scalable contrastive learning framework for identifying multi-scale spatial domains in spatial transcriptomics data.</b>
-</p>
+# 🧬 CoCoST: Compare-and-Contrast Spatial Transcriptomics
 
-<p align="center">
-  <a href="https://github.com/WuLabMDA/CoCo-ST/stargazers"><img src="https://img.shields.io/github/stars/WuLabMDA/CoCo-ST?style=social" alt="GitHub Stars"></a>
-  <a href="https://github.com/WuLabMDA/CoCo-ST/issues"><img src="https://img.shields.io/github/issues/WuLabMDA/CoCo-ST" alt="GitHub Issues"></a>
-  <a href="https://github.com/WuLabMDA/CoCo-ST/blob/master/LICENSE"><img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="License"></a>
-</p>
+**A scalable contrastive learning framework for identifying multi-scale spatial domains in spatial transcriptomics data**
+
+[![GitHub Stars](https://img.shields.io/github/stars/WuLabMDA/CoCo-ST?style=social)](https://github.com/WuLabMDA/CoCo-ST/stargazers)
+[![GitHub Issues](https://img.shields.io/github/issues/WuLabMDA/CoCo-ST)](https://github.com/WuLabMDA/CoCo-ST/issues)
+[![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/WuLabMDA/CoCo-ST/blob/master/LICENSE)
+
+</div>
 
 ---
 
 ## 🔍 Overview
-
-**CoCoST** (Compare-and-Contrast Spatial Transcriptomics) is a computational framework designed to uncover both **high-variance** and **low-variance** spatial structures in large-scale spatial omics data.  
-By leveraging **contrastive learning**, CoCoST disentangles dominant and subtle spatial patterns, revealing biologically meaningful niches that are often overlooked by conventional high-variance methods.
+**CoCoST** (Compare-and-Contrast Spatial Transcriptomics) is a computational framework that uncovers both **high-variance** and **low-variance** spatial structures in large-scale spatial omics data using **contrastive learning**.  
+It reveals biologically meaningful, subtle niches that conventional high-variance-based methods often overlook.
 
 ---
 
 ## 🌟 Key Features
-
-- 🧩 **Contrastive spatial domain detection** – captures both dominant and subtle tissue structures  
+- 🧩 **Contrastive spatial domain detection** – identifies both dominant and subtle spatial structures  
 - 🧠 **Multi-scale analysis** – supports 2 µm, 8 µm, and 16 µm Visium HD resolutions  
 - 🔗 **Cross-sample integration** – corrects batch effects across samples and technologies  
-- ⚡ **Scalable** – efficient on datasets with tens of millions of spots  
-- 🧬 **Biologically interpretable** – links spatial domains to cell–cell interactions and cancer evolution  
+- ⚡ **Scalable** – efficient for datasets with tens of millions of spots  
+- 🧬 **Biologically interpretable** – links spatial domains to cell-cell interactions and tumor evolution  
 
 ---
 
 ## 💻 Installation
 
-You can install the development version of **CoCoST** directly from GitHub:
+Install the latest development version directly from GitHub:
 
 ```r
 # Option 1: using devtools
