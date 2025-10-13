@@ -2,7 +2,7 @@
 
 # CoCoST: Compare and Contrast Spatial Transcriptomics
 
-**A scalable contrastive learning framework for identifying multi-scale spatial domains in spatial transcriptomics data**
+**A scalable contrastive learning framework for identifying spatial domains in spatial transcriptomics data**
 
 [![GitHub Stars](https://img.shields.io/github/stars/WuLabMDA/CoCo-ST?style=social)](https://github.com/WuLabMDA/CoCo-ST/stargazers)
 [![GitHub Issues](https://img.shields.io/github/issues/WuLabMDA/CoCo-ST)](https://github.com/WuLabMDA/CoCo-ST/issues)
