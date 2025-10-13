@@ -1,6 +1,6 @@
 <div align="center">
 
-# CoCoST: Compare and Contrast Spatial Transcriptomics
+# CoCo-ST: Compare and Contrast Spatial Transcriptomics
 
 **A scalable contrastive learning framework for identifying spatial domains in spatial transcriptomics data**
 
@@ -14,7 +14,7 @@
 
 ## Overview
 
-**CoCoST (Compare and Contrast Spatial Transcriptomics)** is a computational algorithm that leverages **contrastive learning** to identify both **high-variance** and **low-variance** spatial structures across spatial transcriptomics datasets.  
+**CoCo-ST (Compare and Contrast Spatial Transcriptomics)** is a computational algorithm that leverages **contrastive learning** to identify both **high-variance** and **low-variance** spatial structures across spatial transcriptomics datasets.  
 Unlike conventional methods that primarily detect dominant spatial domains, CoCoST uncovers subtle yet biologically meaningful spatial niches that are critical for understanding **early tumor evolution**, **precancerous changes**, and **cell–cell interactions**.
 
 ---
