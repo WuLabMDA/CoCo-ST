@@ -14,7 +14,7 @@
 
 ## Overview
 
-**CoCoST (Compare-and-Contrast Spatial Transcriptomics)** is a computational algorithm that leverages **contrastive learning** to identify both **high-variance** and **low-variance** spatial structures across spatial transcriptomics datasets.  
+**CoCoST (Compare and Contrast Spatial Transcriptomics)** is a computational algorithm that leverages **contrastive learning** to identify both **high-variance** and **low-variance** spatial structures across spatial transcriptomics datasets.  
 Unlike conventional methods that primarily detect dominant spatial domains, CoCoST uncovers subtle yet biologically meaningful spatial niches that are critical for understanding **early tumor evolution**, **precancerous changes**, and **cell–cell interactions**.
 
 ---
@@ -25,15 +25,15 @@ Unlike conventional methods that primarily detect dominant spatial domains, CoCo
 
 ## Key Features
 
-- 🧩 **Contrastive spatial learning** – disentangles unique and shared structures across datasets (e.g., tumor vs. normal).  
-- ⚙️ **Multi-scale domain detection** – supports analysis at subcellular (2 µm), cellular (8 µm), and tissue (16 µm) scales.  
-- 🔗 **Cross-sample integration** – harmonizes data from multiple samples and platforms (Visium, Visium HD, Xenium).  
-- ⚡ **Scalable** – efficiently handles tens of millions of spatial spots.  
-- 🧬 **Biologically interpretable** – links spatial domains to immune–stromal interactions and cancer evolution trajectories.  
+-  **Contrastive spatial learning** – disentangles unique and shared structures across datasets (e.g., tumor vs. normal).  
+-  **Multi-scale domain detection** – supports analysis at subcellular (2 µm), cellular (8 µm), and tissue (16 µm) scales.  
+-  **Cross-sample integration** – harmonizes data from multiple samples and platforms (Visium, Visium HD, Xenium).  
+-  **Scalable** – efficiently handles tens of millions of spatial spots.  
+-  **Biologically interpretable** – links spatial domains to immune–stromal interactions and cancer evolution trajectories.  
 
 ---
 
-## 💻 Installation
+## Installation
 
 You can install the latest development version of **CoCoST** directly from GitHub:
 
