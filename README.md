@@ -63,7 +63,7 @@ We welcome contributions and suggestions from the community. If you have any ide
 CoCo-ST is under continuous development. If you encounter an issue, please make sure you install all the required packages necessary to run the codes. If that does not solve your problem, please open a new issue detailing your encountered problem by providing a code and a demo example. We will try to look into your issue and hopefully provide you with a solution. Thanks.
 
 ##  Cite CoCo-ST
-If you use CoCo-ST in your work, please cite the following publication:  
+If you use CoCo-ST or our shared spatial transcriptomics datasets in your work, please cite the following publication:
 
 Aminu, M., Zhu, B., Vokes, N. et al. CoCo-ST detects global and local biological structures in spatial transcriptomics datasets. Nat Cell Biol (2025). https://doi.org/10.1038/s41556-025-01781-z
 
