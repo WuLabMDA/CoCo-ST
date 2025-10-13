@@ -50,6 +50,20 @@ or by running:
 remotes::install_github("WuLabMDA/CoCo-ST")
 
 ```
+### Support
+
+For any question, request or bug report please create a new issue in this repository. 
+
+### Contributions
+
+We welcome contributions and suggestions from the community. If you have any idea, please submit it as an issue, which we will look into and ask for further explannation if necessary. 
+
+### Reporting issues
+
+CoCo-ST is under continuous development. If you encounter an issue, please make sure you install all the required packages necessary to run the codes. If that does not solve your problem, please open a new issue detailing your encountered problem by providing a code and a demo example. We will try to look into your issue and hopefully provide you with a solution. Thanks.
+
+##  Cite CoCo-ST
+To cite this work and access a comprehensive description of the CoCo-ST method, please refer to:
 
 
 
