@@ -64,7 +64,7 @@ CoCo-ST is under continuous development. If you encounter an issue, please make 
 
 ##  Cite CoCo-ST
 If you use this work, please cite:
-Aminu, M., Zhu, B., Vokes, N. et al. CoCo-ST detects global and local biological structures in spatial transcriptomics datasets. Nat Cell Biol (2025). https://doi.org/10.1038/s41556-025-01781-z
+/n Aminu, M., Zhu, B., Vokes, N. et al. CoCo-ST detects global and local biological structures in spatial transcriptomics datasets. Nat Cell Biol (2025). https://doi.org/10.1038/s41556-025-01781-z
 
 
 
