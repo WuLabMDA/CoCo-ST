@@ -1,48 +1,43 @@
-# PanDA
-PanDA is a joint discriminant analysis method aimed at fusing multi-omics datasets through finding a discriminant common latent space. PanDA captures cross-omics interaction and consistency and uses an uncorrelated constraint to ensure that the extracted latent components for each omics (omics-specific components) are not highly correlated. Because the components extracted using PanDA contain valuable discriminant information, we refer to them as discriminant components. These components can be used as inputs to several multi-omics analysis tools to enable efficient, improved downstream analysis. Here and in our paper, we demonstrated the advantages of PanDA over ten integrative multi-omics methods through four distinct downstream analyses: single-cell multi-omics data visualization, patient (or tumor) classification, biomarker identification, and clinical outcome prediction.
+<h1 align="center">🧬 CoCoST: Compare-and-Contrast Spatial Transcriptomics</h1>
 
 <p align="center">
-  <img src="docs/panda results.png" width="900">
+  <b>A scalable contrastive learning framework for identifying multi-scale spatial domains in spatial transcriptomics data.</b>
 </p>
 
-### Installation
-PanDA can be installed by simply running the following code:
-```
-## Install development version
-remotes::install_github("WuLabMDA/PANDA") 
-```
-or by running:
-``` r
-remotes::install_github("muhammadaminu47/PANDA")
-```
-
-## Input data
-
-The input dataset for all the experiments reported in our paper can be found in the `./data/` folder of this repository. 
-
-# CoCoST: Compare-and-Contrast Spatial Transcriptomics
-
-**CoCoST** (Compare-and-Contrast Spatial Transcriptomics) is a computational framework that identifies both **high-variance** and **low-variance** spatial structures in spatial transcriptomics data using a **contrastive learning** strategy.  
-It enables robust detection of spatial domains across different resolutions (e.g., Visium, Xenium, Visium HD) and scales to tens of millions of spots.
+<p align="center">
+  <a href="https://github.com/WuLabMDA/CoCo-ST/stargazers"><img src="https://img.shields.io/github/stars/WuLabMDA/CoCo-ST?style=social" alt="GitHub Stars"></a>
+  <a href="https://github.com/WuLabMDA/CoCo-ST/issues"><img src="https://img.shields.io/github/issues/WuLabMDA/CoCo-ST" alt="GitHub Issues"></a>
+  <a href="https://github.com/WuLabMDA/CoCo-ST/blob/master/LICENSE"><img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="License"></a>
+</p>
 
 ---
 
-## Key Features
+## 🔍 Overview
 
-- **Contrastive spatial domain detection:** captures both dominant and subtle spatial structures.  
-- **Multi-scale analysis:** supports 2 µm, 8 µm, and 16 µm resolutions.  
-- **Multi-sample integration:** corrects batch effects across samples and technologies.  
-- **Scalable:** optimized for large-scale spatial transcriptomics datasets.  
-- **Biologically interpretable:** links spatial domains to cell-cell interactions and cancer evolution.
+**CoCoST** (Compare-and-Contrast Spatial Transcriptomics) is a computational framework designed to uncover both **high-variance** and **low-variance** spatial structures in large-scale spatial omics data.  
+By leveraging **contrastive learning**, CoCoST disentangles dominant and subtle spatial patterns, revealing biologically meaningful niches that are often overlooked by conventional high-variance methods.
 
 ---
 
-## Installation
+## 🌟 Key Features
 
-You can install the development version of **CoCoST** directly from GitHub using either **devtools** or **remotes**.
+- 🧩 **Contrastive spatial domain detection** – captures both dominant and subtle tissue structures  
+- 🧠 **Multi-scale analysis** – supports 2 µm, 8 µm, and 16 µm Visium HD resolutions  
+- 🔗 **Cross-sample integration** – corrects batch effects across samples and technologies  
+- ⚡ **Scalable** – efficient on datasets with tens of millions of spots  
+- 🧬 **Biologically interpretable** – links spatial domains to cell–cell interactions and cancer evolution  
 
-### Option 1 – Using *devtools*
+---
+
+## 💻 Installation
+
+You can install the development version of **CoCoST** directly from GitHub:
+
 ```r
-# install.packages("devtools")  # if not yet installed
+# Option 1: using devtools
+# install.packages("devtools")
 devtools::install_github("WuLabMDA/CoCo-ST")
 
+# Option 2: using remotes
+# install.packages("remotes")
+remotes::install_github("WuLabMDA/CoCo-ST")
