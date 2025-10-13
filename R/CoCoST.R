@@ -45,14 +45,13 @@ CoCoST <- function(data1, W1, data2, W2, para = 0.2, Dim = 2) {
   W1 <- as.matrix(W1)
   W2 <- as.matrix(W2)
 
-  # Ensure they are 2D
   if (is.null(dim(W1)) || is.null(dim(W2))) {
     stop("W1 and W2 must be 2D matrices (not numeric vectors).")
   }
 
-  # Use sparse matrices for efficiency
-  W1 <- Matrix::as(W1, "sparseMatrix")
-  W2 <- Matrix::as(W2, "sparseMatrix")
+  # ✅ Corrected coercion — use base `as()`, not Matrix::as()
+  W1 <- as(W1, "sparseMatrix")
+  W2 <- as(W2, "sparseMatrix")
 
   # Construct normalized graph Laplacians
   D1 <- Matrix::Diagonal(x = rowSums(W1))
