@@ -1,1 +1,26 @@
+# CoCoST: Compare-and-Contrast Spatial Transcriptomics
+
+**CoCoST** (Compare-and-Contrast Spatial Transcriptomics) is a computational framework that identifies both **high-variance** and **low-variance** spatial structures in spatial transcriptomics data using a **contrastive learning** strategy.  
+It enables robust detection of spatial domains across different resolutions (e.g., Visium, Xenium, Visium HD) and scales to tens of millions of spots.
+
+---
+
+## Key Features
+
+- **Contrastive spatial domain detection:** captures both dominant and subtle spatial structures.  
+- **Multi-scale analysis:** supports 2 µm, 8 µm, and 16 µm resolutions.  
+- **Multi-sample integration:** corrects batch effects across samples and technologies.  
+- **Scalable:** optimized for large-scale spatial transcriptomics datasets.  
+- **Biologically interpretable:** links spatial domains to cell-cell interactions and cancer evolution.
+
+---
+
+## Installation
+
+You can install the development version of **CoCoST** directly from GitHub using either **devtools** or **remotes**.
+
+### Option 1 – Using *devtools*
+```r
+# install.packages("devtools")  # if not yet installed
+devtools::install_github("WuLabMDA/CoCo-ST")
 
