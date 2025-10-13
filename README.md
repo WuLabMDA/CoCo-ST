@@ -48,11 +48,5 @@ remotes::install_github("WuLabMDA/CoCo-ST")
 
 ```
 
----
-
-## Tutorials
-
-We provide detailed tutorials demonstrating how to run **CoCoST** on various spatial transcriptomics datasets and integrate it with downstream spatial analysis frameworks.
-
 
 
