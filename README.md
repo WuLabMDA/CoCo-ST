@@ -41,7 +41,10 @@ You can install the latest development version of **CoCoST** directly from GitHu
 # Option 1: using devtools
 # install.packages("devtools")
 devtools::install_github("WuLabMDA/CoCo-ST")
+```
+or by running:
 
+```r
 # Option 2: using remotes
 # install.packages("remotes")
 remotes::install_github("WuLabMDA/CoCo-ST")
