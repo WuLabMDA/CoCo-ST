@@ -1,4 +1,4 @@
-#' CoCoST: Compare-and-Contrast Spatial Transcriptomics
+#' CoCoST: Compare and Contrast Spatial Transcriptomics
 #'
 #' CoCoST identifies spatial structures by comparing two datasets
 #' (foreground and background) using normalized graph Laplacians and
