@@ -55,7 +55,7 @@ remotes::install_github("WuLabMDA/CoCo-ST")
 
 We provide comprehensive tutorials demonstrating how to run CoCo-ST across different spatial transcriptomics platforms:
 
--  **[CoCo-ST Tutorial: Identifying Spatial Domains in Visium Spot Data](https://github.com/WuLabMDA/CoCo-ST/Tutorials/visium_spot.html)**
+-  **[CoCo-ST Tutorial: Identifying Spatial Domains in Visium Spot Data](https://wulabmda.github.io/CoCo-ST/Tutorials/visium_spot.html)**
 
 
 ### Support
